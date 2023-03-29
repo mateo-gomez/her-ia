@@ -2,9 +2,9 @@
   "name": "her",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "dev": "node main.js"
+    "dev": "electron ."
   },
   "keywords": [],
   "author": "",
