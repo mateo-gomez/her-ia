@@ -1,0 +1,10 @@
+{
+    "extends": "standard",
+    "ignorePatterns": [
+      "three.min.js",
+      "loading.js"
+    ],
+    "rules": {
+      "space-before-function-paren": "off"
+    }
+  }
