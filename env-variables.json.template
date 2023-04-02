@@ -1,0 +1,10 @@
+{
+  "OPENAI_API_KEY": "<OPENAI_API_KEY>",
+  "OPENAI_URL": "https://api.openai.com/v1",
+  "TTS_URL": "https://voicerss-text-to-speech.p.rapidapi.com",
+  "TTS_TOKEN": "<TTS_TOKEN>",
+  "TTS_API_KEY": "<TTS_API_KEY>",
+  "PLAYHT_API_KEY": "<PLAYHT_API_KEY>",
+  "PLAYHT_USER_ID": "<PLAYHT_USER_ID>",
+  "PLAYHT_URL": "https://play.ht/api/v1"
+}
