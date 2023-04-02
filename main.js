@@ -1,5 +1,8 @@
 const path = require('node:path')
-const { app, BrowserWindow, session } = require('electron')
+const { app, BrowserWindow, session, ipcMain } = require('electron')
+const { askGPT, whisper } = require('./services/openai')
+const { textToSpeechIA } = require('./services/playht')
+const { textToSpeech } = require('./services/tts')
 
 require('electron-reload')(__dirname, {
   electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
@@ -18,8 +21,6 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
-  createWindow()
-
   session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
     const opts = {
       responseHeaders: {
@@ -40,4 +41,11 @@ app.whenReady().then(() => {
   app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
   })
+
+  ipcMain.handle('whisper', whisper)
+  ipcMain.handle('askGPT', askGPT)
+  ipcMain.handle('textToSpeechIA', textToSpeechIA)
+  ipcMain.handle('textToSpeech', textToSpeech)
+
+  createWindow()
 })
